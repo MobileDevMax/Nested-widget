@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Nested widget',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text ('Nested widget'),
+        ),
+        body: Center(
+          // External widget Container
+          child: Container(
+            width: 500,
+            height: 500,
+            color: Colors.green,
+            // Internal widget Center
+            child: Center(
+              child: Text(
+                'Hello, Flutter!',
+                style: TextStyle(color: Colors.white, fontSize: 50),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
